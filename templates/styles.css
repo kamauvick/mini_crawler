@@ -1,0 +1,15 @@
+.graphs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;  
+    margin: 50px;
+}   
+h1{
+    font-family: system-ui;
+    font-size: 40px;
+    color: grey;
+}
+p{
+    font-family: system-ui;
+    color: tomato;
+}
