@@ -7,6 +7,7 @@ response  = requests.get(it_engineering_gigs_link)
 raw_page_data = response.text
 parsed_data = soup(raw_page_data, "html.parser")
 
+# Get total number of featured jobs in the engineering and tech category
 def get_brightermonday_jobs():
     raw_jobs_extract = parsed_data.findAll("div", {"class": "customer-card--row"})
     found_jobs = parsed_data.findAll("h2", {"class": "search-main__header__sub-title--faded"})
@@ -17,7 +18,7 @@ def get_brightermonday_jobs():
 
 
 def get_featured_jobs():
-    featured_jobs = parsed_data.findAll("div", {"class":"wrapper--inline-flex direction--column card-content__listing"})
+    featured_jobs = parsed_data.findAll("div", {"class":"wrapper--inline-flex justify--space-between align--center padding-top--5"})
     print(featured_jobs.__len__())
     # print(featured_jobs['wrapper--inline-flex justify--space-between align--center padding-top--5'])
 
@@ -41,4 +42,4 @@ def extract_pro_roles():
 get_brightermonday_jobs()
 
 get_featured_jobs()
-get_searched_jobs()
+# get_searched_jobs()
